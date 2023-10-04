@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/stock
+    username: root
+    password: 1234
+    driver-class-name : com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto : create #자동으로 DB 생성 update: 더이상 바꾸고 싶지 않을 때, # create: 자동 갱신
+    properties:
+      hibernate:
+        #        show_sql: true #systemout으로 로그 찍힘
+        format_sql: true
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: always
+
+logging:
+  level:
+    org.hibernate.SQL: debug #JPA hibernate가 생성하는 SQL 보임
